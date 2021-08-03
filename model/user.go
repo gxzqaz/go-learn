@@ -1,12 +1,8 @@
 package model
 
-import (
-	"gorm.io/gorm"
-)
-
 // gorm.Model 的定义
 type User struct {
-	gorm.Model
-	Username string ``
-	Password string ``
+	BaseModel
+	Username string `gorm:"uniqueIndex;size:128" json:"username"`
+	Password string `gorm:"size:128" json:"password"`
 }
